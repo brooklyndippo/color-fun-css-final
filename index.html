@@ -195,8 +195,9 @@
 			function handleClicks(e) {
 				if (e.target.matches('.swatch')) {
 					const color = e.target.dataset.color
+					const color_code = color.replace('Color ', '')
 					const price = e.target.dataset.price
-					addToCart(color, price)
+					addToCart(color, price, color_code)
 				}
 			}
 			
@@ -231,7 +232,7 @@
         }
       })
 
-      function addToCart(name, price) {
+      function addToCart(name, price, color_code) {
         for (let i = 0; i < cart.length; i += 1) {
           if (cart[i].name === name) {
             cart[i].qty += 1
@@ -239,7 +240,7 @@
             return true
           }
         }
-        cart.push({ name, price, qty: 1})
+        cart.push({ name, price, qty: 1, color_code})
         showCart()
       }
 
@@ -267,22 +268,26 @@
         let str = ''
         for (let i = 0; i < cart.length; i += 1) {
 					// Shopping cart list item! 
-          str += `<li>
+          str += `
+		  <li>
+			<span>
+				<div class="cart-swatch color-${cart[i].color_code}"></div>
+			</span>
             <span>
-							<span>${cart[i].name}</span>
-							<span>${cart[i].price}</span> 
-							<span>each x</span>
-							<span>${cart[i].qty}</span> 
-							<span> = </span>  
-							<span>${(cart[i].qty * cart[i].price).toFixed(2)}</span>
-						</span>
-            
-						<span>
-							<input class="update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
-							<button class="add-one" data-name="${cart[i].name}"> + </button>
-							<button class="remove-one" data-name="${cart[i].name}"> - </button>
-							<button class="remove" data-name="${cart[i].name}">remove</button>
-						</span>
+				<span>${cart[i].name}</span>
+				<span>${cart[i].price}</span> 
+				<span>each x</span>
+				<span>${cart[i].qty}</span> 
+				<span> = </span>  
+				<span>${(cart[i].qty * cart[i].price).toFixed(2)}</span>
+			</span>
+
+			<span>
+				<input class="update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
+				<button class="add-one" data-name="${cart[i].name}"> + </button>
+				<button class="remove-one" data-name="${cart[i].name}"> - </button>
+				<button class="remove" data-name="${cart[i].name}">remove</button>
+			</span>
           </li>`
         }
         itemsList.innerHTML = str

@@ -152,3 +152,14 @@ nav a.active-nav-item {
 .swatch {
     width: 180px;
 }
+
+.swatch:hover {
+    transform: scale(1.5);
+    transition: .2s;
+    border: 3px solid white;
+}
+
+.cart-swatch {
+    width: 20px;
+    height: 20px;
+}
