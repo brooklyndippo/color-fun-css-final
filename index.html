@@ -275,9 +275,8 @@
 			</span>
             <span>
 				<span>${cart[i].name}</span>
-				<span>${cart[i].price}</span> 
-				<span>each x</span>
-				<span>${cart[i].qty}</span> 
+				<span>$${cart[i].price} each</span> 
+				<span> x ${cart[i].qty}</span> 
 				<span> = </span>  
 				<span>${(cart[i].qty * cart[i].price).toFixed(2)}</span>
 			</span>
