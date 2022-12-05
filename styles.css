@@ -64,6 +64,9 @@ a {
 }
 
 nav {
+    width: 100vw;
+    padding: 0 10vw;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,11 +242,22 @@ input[type=number] {
     border-radius: 5px;
 }
 
-input[type=text] {
+label {
+    text-transform: capitalize;
+}
+
+input[type=text], textarea {
     width: 100%;
     padding: 10px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border: 1px solid var(--form-gray);
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
