@@ -1,0 +1,15 @@
+{
+  "name": "color-fun",
+  "version": "1.0.0",
+  "description": "Color Fun Assessment",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "compile-sass": "node-sass scss/_color_swatches.scss css/color_swatches.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+$swatch-color: rgb(15, 54, 92);
+
+@for $i from 0 through 100 {
+  .color-#{$i} {
+    background-color: adjust-hue($swatch-color, $i * 3.6deg);
+  }
+}
