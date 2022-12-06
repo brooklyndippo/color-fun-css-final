@@ -191,10 +191,6 @@ nav a.active-nav-item {
 #items li span {
     padding: 0px 5px;
 }
-/* 
-#items li span:nth-child(2) {
-    width: 400px;
-} */
 
 /* Color Name Badge */
 #items li span:nth-child(2) span:first-child {
@@ -241,6 +237,8 @@ input[type=number] {
     border: 1px solid var(--form-gray);
     border-radius: 5px;
 }
+
+/* Style the Form */
 
 label {
     text-transform: capitalize;
@@ -332,3 +330,33 @@ label:has(input[type="checkbox"]:checked)::before {
 input[type="checkbox"] + label::before {
     content: 'hello'
 }
+
+
+/* Style the banner */
+
+#banner {
+    margin: 8vh 0  0 -10vw;
+    background-color: var(--primary-color);
+    height: 5vh;
+    width: 100vw;
+}
+
+#banner h1 {
+    font-size: 1.6rem;
+    text-align: 0px;
+    vertical-align: center;
+    overflow: hidden;
+    position: absolute;
+    top: 7%;
+    right: 5%;
+    width: 500px;
+    color: white;
+    animation: scrolling-text 25s infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes scrolling-text{
+    0% {right: -500px}
+    100%  {right: 100vw}
+  }
