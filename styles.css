@@ -5,7 +5,7 @@
 ✓ Style the navbar
 ✓ Style cards
 ✓ Style colors
-- Shopping cart
+✓ Shopping cart
 - Center content
 - Ticker tape
 
@@ -258,6 +258,8 @@ input[type=text], textarea {
 form {
     display: flex;
     flex-direction: column;
+    padding: 10%;
+    border-radius: 20px;
 }
 
 button {
@@ -270,4 +272,63 @@ button {
 
 button:hover {
     box-shadow: 0px 0px 5px gray;
+}
+
+
+input[type=radio] {
+    display: none;
+}
+
+.radio-selectors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-selectors label {
+    padding: 15px 5px;
+    border: 1px solid var(--form-gray);
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.radio-selectors label:hover {
+    box-shadow: 0px 0px 5px gray;
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+}
+
+label:has(input[type="radio"]:checked) {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: none;
+
+}
+
+input[type="checkbox"] {
+   display: none;
+}
+
+
+label:has(input[type="checkbox"])::before {
+    content: '\2713';
+    color: var(--badge-gray);
+    font-weight: 700;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--badge-gray);
+    border-radius: 5px;
+}
+
+label:has(input[type="checkbox"]:checked)::before {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+
+input[type="checkbox"] + label::before {
+    content: 'hello'
 }
