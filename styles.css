@@ -30,8 +30,9 @@ html, body {
 
 /* Page Structure */
 
-section:not(#nav, #banner) {
-    min-height: 100vh;
+section:not(#nav, #banner, #footer) {
+    padding-top: 120px;
+    min-height: 80vh;
 }
 
 /* Typography */
@@ -114,6 +115,7 @@ nav a.active-nav-item {
     row-gap: 5vw;
     column-gap: 1vw;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .card {
@@ -362,3 +364,14 @@ input[type="checkbox"] + label::before {
     0% {right: -500px}
     100%  {right: 100vw}
   }
+
+
+/* Spacing & Centering */
+
+#about {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
