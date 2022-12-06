@@ -335,10 +335,11 @@ input[type="checkbox"] + label::before {
 /* Style the banner */
 
 #banner {
-    margin: 8vh 0  0 -10vw;
+    margin: 65px 0  0 -10vw;
     background-color: var(--primary-color);
     height: 5vh;
     width: 100vw;
+    position: fixed;
 }
 
 #banner h1 {
@@ -347,7 +348,8 @@ input[type="checkbox"] + label::before {
     vertical-align: center;
     overflow: hidden;
     position: absolute;
-    top: 7%;
+    margin: 0;
+    top: 3%;
     right: 5%;
     width: 500px;
     color: white;
